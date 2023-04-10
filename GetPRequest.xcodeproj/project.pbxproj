@@ -10,7 +10,7 @@
 		00737BB8D3FC390979989036 /* Pods_GetPRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83680533B9653D01568ED37B /* Pods_GetPRequest.framework */; };
 		285EABA729DF285C008DF969 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EABA629DF285C008DF969 /* AppDelegate.swift */; };
 		285EABA929DF285C008DF969 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EABA829DF285C008DF969 /* SceneDelegate.swift */; };
-		285EABAB29DF285C008DF969 /* GetRequestPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EABAA29DF285C008DF969 /* GetRequestPage.swift */; };
+		285EABAB29DF285C008DF969 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EABAA29DF285C008DF969 /* ViewController.swift */; };
 		285EABAE29DF285C008DF969 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285EABAC29DF285C008DF969 /* Main.storyboard */; };
 		285EABB029DF285E008DF969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285EABAF29DF285E008DF969 /* Assets.xcassets */; };
 		285EABB329DF285E008DF969 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285EABB129DF285E008DF969 /* LaunchScreen.storyboard */; };
@@ -23,13 +23,14 @@
 		285EABCE29E01731008DF969 /* PostRequestPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EABCD29E01731008DF969 /* PostRequestPage.swift */; };
 		285EABD029E017DE008DF969 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EABCF29E017DE008DF969 /* ApiManager.swift */; };
 		285EABD229E020D9008DF969 /* GetRequestFullInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EABD129E020D9008DF969 /* GetRequestFullInfo.swift */; };
+		285EABF029E12650008DF969 /* AlertUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EABEF29E12650008DF969 /* AlertUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		285EABA329DF285C008DF969 /* GetPRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetPRequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		285EABA629DF285C008DF969 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		285EABA829DF285C008DF969 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		285EABAA29DF285C008DF969 /* GetRequestPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequestPage.swift; sourceTree = "<group>"; };
+		285EABAA29DF285C008DF969 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		285EABAD29DF285C008DF969 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		285EABAF29DF285E008DF969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		285EABB229DF285E008DF969 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +42,7 @@
 		285EABCD29E01731008DF969 /* PostRequestPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestPage.swift; sourceTree = "<group>"; };
 		285EABCF29E017DE008DF969 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		285EABD129E020D9008DF969 /* GetRequestFullInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequestFullInfo.swift; sourceTree = "<group>"; };
+		285EABEF29E12650008DF969 /* AlertUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUI.swift; sourceTree = "<group>"; };
 		83680533B9653D01568ED37B /* Pods_GetPRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetPRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB887C6391F01384E175C2C7 /* Pods-GetPRequest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetPRequest.debug.xcconfig"; path = "Target Support Files/Pods-GetPRequest/Pods-GetPRequest.debug.xcconfig"; sourceTree = "<group>"; };
 		F305B24DC0B1260A36CE0DDE /* Pods-GetPRequest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetPRequest.release.xcconfig"; path = "Target Support Files/Pods-GetPRequest/Pods-GetPRequest.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,11 +115,12 @@
 		285EABBC29DF35F0008DF969 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				285EABAA29DF285C008DF969 /* GetRequestPage.swift */,
+				285EABAA29DF285C008DF969 /* ViewController.swift */,
 				285EABC529DF3958008DF969 /* ExtensionVC.swift */,
 				285EABC729E0131E008DF969 /* CustomCell.swift */,
 				285EABCD29E01731008DF969 /* PostRequestPage.swift */,
 				285EABD129E020D9008DF969 /* GetRequestFullInfo.swift */,
+				285EABEF29E12650008DF969 /* AlertUI.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -281,7 +284,7 @@
 			files = (
 				285EABCA29E0148A008DF969 /* NewsModel.swift in Sources */,
 				285EABD029E017DE008DF969 /* ApiManager.swift in Sources */,
-				285EABAB29DF285C008DF969 /* GetRequestPage.swift in Sources */,
+				285EABAB29DF285C008DF969 /* ViewController.swift in Sources */,
 				285EABA729DF285C008DF969 /* AppDelegate.swift in Sources */,
 				285EABCC29E015CA008DF969 /* PostModel.swift in Sources */,
 				285EABCE29E01731008DF969 /* PostRequestPage.swift in Sources */,
@@ -289,6 +292,7 @@
 				285EABD229E020D9008DF969 /* GetRequestFullInfo.swift in Sources */,
 				285EABC629DF3958008DF969 /* ExtensionVC.swift in Sources */,
 				285EABA929DF285C008DF969 /* SceneDelegate.swift in Sources */,
+				285EABF029E12650008DF969 /* AlertUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
