@@ -94,14 +94,14 @@ class ViewController: UIViewController {
     
     @objc private func putRightButtonTapped() {
        
-//        navigationController?.pushViewController(ViewController(), animated: true)
-        dismiss(animated: true, completion: nil)
-        navigationController?.popToRootViewController(animated: true)
+        navigationController?.pushViewController(PostRequestPage(), animated: true)
+//        dismiss(animated: true, completion: nil)
+//        navigationController?.popToRootViewController(animated: true)
+        
     }
     @objc private func postRightButtonTapped() {
 
-         navigationController?.pushViewController(PostRequestPage(), animated: true)
-//        showAlert(with: "POST Request", message: "Enter the data for the request")
+        showAlert(with: "POST Request", message: "Enter the data for the request")
         
     }
     private func showAlert(with title: String, message: String) {

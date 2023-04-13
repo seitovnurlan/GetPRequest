@@ -10,10 +10,7 @@ import SnapKit
 
 class PostRequestPage: UIViewController {
     
-    private lazy var scrollView: UIScrollView = {
-        let sview = UIScrollView()
-        return sview
-    }()
+    //MARK: - Views
     
     private lazy var textField1: UITextField = {
         let text = UITextField()
@@ -50,6 +47,7 @@ class PostRequestPage: UIViewController {
         return post
     } ()
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,12 +63,8 @@ class PostRequestPage: UIViewController {
     
     private func setupConstrainPost() {
         
-        view.addSubview(scrollView)
-        scrollView.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalToSuperview()
-            
-        }
         view.addSubview(textField1)
+        textField1.translatesAutoresizingMaskIntoConstraints = false
         textField1.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(300)
             make.centerX.equalToSuperview()
@@ -79,6 +73,7 @@ class PostRequestPage: UIViewController {
         }
         
         view.addSubview(textField2)
+        textField2.translatesAutoresizingMaskIntoConstraints = false
         textField2.snp.makeConstraints { make in
             make.top.equalTo(textField1.snp.bottom).offset(40)
             make.centerX.equalToSuperview()
@@ -87,12 +82,14 @@ class PostRequestPage: UIViewController {
         }
         
         view.addSubview(postRequest)
+        postRequest.translatesAutoresizingMaskIntoConstraints = false
         postRequest.snp.makeConstraints { make in
             make.top.equalTo(textField2.snp.bottom).offset(50)
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
             make.width.equalTo(300)
         }
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
     }
 //    private func checktext(_ textField: UITextField) {
 //
@@ -105,6 +102,9 @@ class PostRequestPage: UIViewController {
 //            textField.layer.borderWidth = 0
 //        }
 //    }
+    @objc private func hideKeyboard() {
+        self.view.endEditing(true)
+    }
     
     @objc private func textFieldAction(_ sender: Any) {
 
@@ -173,13 +173,24 @@ class PostRequestPage: UIViewController {
     }
     @objc func kbWillShow(_ notification: Notification) {
         
-        let userInfo = notification.userInfo
-        let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        scrollView.contentOffset = CGPoint(x: 0, y: kbFrameSize.height)
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            
+            let keyboardHeight = keyboardFrame.cgRectValue.height
+//            print("keyboardHeight = \(keyboardHeight)")
+            let bottomSpace = self.view.frame.height - (postRequest.frame.origin.y + postRequest.frame.height)
+//            print("bottomSpace = \(bottomSpace)")
+            if (self.view.frame.origin.y) == -34 {
+                self.view.frame.origin.y = -34
+            } else
+            {
+                self.view.frame.origin.y -= keyboardHeight - bottomSpace + 10}
+            
+//            print("self.view.frame.origin.y = \(self.view.frame.origin.y)")
+        }
         
     }
     @objc func kbWillHide() {
-        scrollView.contentOffset = CGPoint.zero
+        self.view.frame.origin.y = 0
     }
     
 }
